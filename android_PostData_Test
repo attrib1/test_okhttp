@@ -1,0 +1,11 @@
+<?php
+ 
+	$conn =  mysql_connect("127.0.0.1","root","")or die("error")	;
+	$objDatabasr = mysql_select_db("test")or die("database is not connect.");
+mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'", $conn);
+ 	$data = $_POST['post_data'];
+	echo " data - ".$data;
+ 	$strSql = "INSERT INTO `test`.`test_data`(`datas`)VALUES('".$data."')";
+ 	//mysql_query($strSql);
+mysql_query($strSql);
+?>
